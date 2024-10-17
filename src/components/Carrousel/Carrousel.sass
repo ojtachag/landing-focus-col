@@ -5,7 +5,6 @@
     height: 600px
     overflow: hidden
     position: relative
-    border-radius: 12px
 .button
   position: absolute
   top: 50%
@@ -15,6 +14,7 @@
   border: none
   padding: 10px
   cursor: pointer
+  font-size: 24px
 .button__left
   @extend .button
   left: 10px
@@ -40,6 +40,7 @@
   &__container
     display: flex
     transition: transform 0.5s ease-in-out
+    height: 100%
 @keyframes fade
   from
     opacity: .4

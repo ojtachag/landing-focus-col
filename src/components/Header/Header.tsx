@@ -11,7 +11,7 @@ const Header: FC = () => {
         navigate('/about-us');
     };
     const cvEventHandler = ()=>{
-        navigate('/cv');
+        window.open('/BROCHURE.pdf', '_blank');
     };
     const outServicesEventHandler = ()=>{
         navigate('/services');
@@ -20,10 +20,10 @@ const Header: FC = () => {
         <div className="header__container--light">
             <div className="header__logotype">
                 <picture>
-                    <source src="logo.png" type="image/png"/>
+                    <source src="images/logo.svg" type="image/svg"/>
                     <img
                         className="header__logotype"
-                        src="logo.png"
+                        src="images/logo.svg"
                         alt="logo"
                         loading="eager"
                         title="logo"
@@ -34,7 +34,7 @@ const Header: FC = () => {
                 <div className="menu__item" onClick={homeClickEventHandler}>Inicio</div>
                 <div className="menu__item" onClick={outServicesEventHandler}>Nuestros servicios</div>
                 <div className="menu__item" onClick={aboutUsEventHandler} onMouseEnter={()=>console.log('mouse in')} onMouseLeave={()=>console.log('mouse out')}>Acerca de nosotros</div>
-                <div className="menu__item" onClick={cvEventHandler}>CV</div>
+                <div className="menu__item" onClick={cvEventHandler}>Brochure</div>
             </div>
         </div>
     );

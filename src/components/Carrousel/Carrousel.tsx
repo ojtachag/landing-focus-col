@@ -7,9 +7,9 @@ const Carrousel: FC = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % 3);
     };
     const images = [
-        '1.png',
-        '2.png',
-        '3.png',
+        'images/image1.jpg',
+        'images/image2.jpg',
+        'images/image3.jpg',
     ];
 
     const goToPreviousSlide = () => {

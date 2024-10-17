@@ -5,7 +5,6 @@ const ContactCards: FC = () => {
     return (
         <div className="contact-cards__container">
             <ContactCard/>
-            <ContactCard/>
         </div>
     );
 };
