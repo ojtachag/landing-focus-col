@@ -12,10 +12,10 @@ const WhyChooseUs: FC = () => {
                     <div className='bar__top'/>
                     <div className='bar__information--container orange'>
                         <picture>
-                            <source src="images/logo.svg" type="image/svg"/>
+                            <source src="images/logo.svg" type="image/png"/>
                             <img
                                 className="bar__information--image"
-                                src="images/logo.svg"
+                                src="images/1.png"
                                 alt="logo"
                                 loading="eager"
                                 title="logo"
@@ -32,10 +32,10 @@ const WhyChooseUs: FC = () => {
                     <div className='bar__top'/>
                     <div className='bar__information--container green'>
                         <picture>
-                            <source src="images/logo.svg" type="image/svg"/>
+                            <source src="images/2.png" type="image/png"/>
                             <img
                                 className="bar__information--image"
-                                src="images/logo.svg"
+                                src="images/2.png"
                                 alt="logo"
                                 loading="eager"
                                 title="logo"
@@ -55,10 +55,10 @@ const WhyChooseUs: FC = () => {
                     <div className='bar__top'/>
                     <div className='bar__information--container blue'>
                         <picture>
-                            <source src="images/logo.svg" type="image/svg"/>
+                            <source src="images/3.png" type="image/png"/>
                             <img
                                 className="bar__information--image"
-                                src="images/logo.svg"
+                                src="images/3.png"
                                 alt="logo"
                                 loading="eager"
                                 title="logo"
@@ -76,10 +76,10 @@ const WhyChooseUs: FC = () => {
                     <div className='bar__top'/>
                     <div className='bar__information--container magenta'>
                         <picture>
-                            <source src="images/logo.svg" type="image/svg"/>
+                            <source src="images/4.png" type="image/png"/>
                             <img
                                 className="bar__information--image"
-                                src="images/logo.svg"
+                                src="images/4.png"
                                 alt="logo"
                                 loading="eager"
                                 title="logo"

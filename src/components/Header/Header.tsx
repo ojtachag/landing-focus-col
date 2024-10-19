@@ -1,9 +1,10 @@
-import { FC } from 'react';
+import { FC, useEffect, useMemo, useState } from 'react';
 import './Header.sass';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header: FC = () => {
     const navigate = useNavigate();
+    const [activeTabName, setActiveTabName] = useState<any>({ innerText:'Inicio' });
     const homeClickEventHandler = ()=>{
         navigate('/');
     };
@@ -13,9 +14,39 @@ const Header: FC = () => {
     const cvEventHandler = ()=>{
         window.open('/BROCHURE.pdf', '_blank');
     };
-    const outServicesEventHandler = ()=>{
+    const ourServicesEventHandler = ()=>{
         navigate('/services');
     };
+    const ourPlansEventHandler = ()=>{
+        navigate('/plans');
+    };
+    const routes = useMemo(()=> [
+        {
+            path: '/',
+            innerText: 'Inicio'
+        },
+        {
+            path: '/services',
+            innerText: 'Nuestros servicios'
+        },
+        {
+            path: '/about-us',
+            innerText: 'Acerca de nosotros'
+        },
+        {
+            path: '/plans',
+            innerText: 'Planes'
+        }
+    ], []);
+    const location = useLocation();
+    useEffect(() => {
+        console.log(location.pathname);
+        const activeTabName = routes.find((route) => {
+            return route.path === location.pathname;
+        });
+        console.log(activeTabName);
+        setActiveTabName(activeTabName);
+    }, [location.pathname, routes]);
     return (
         <div className="header__container--light">
             <div className="header__logotype">
@@ -31,10 +62,11 @@ const Header: FC = () => {
                 </picture>
             </div>
             <div className="menu__container">
-                <div className="menu__item" onClick={homeClickEventHandler}>Inicio</div>
-                <div className="menu__item" onClick={outServicesEventHandler}>Nuestros servicios</div>
-                <div className="menu__item" onClick={aboutUsEventHandler} onMouseEnter={()=>console.log('mouse in')} onMouseLeave={()=>console.log('mouse out')}>Acerca de nosotros</div>
-                <div className="menu__item" onClick={cvEventHandler}>Brochure</div>
+                <div className={`menu__item ${activeTabName.innerText === 'Inicio' ? 'active' : ''}`} onClick={homeClickEventHandler}>Inicio</div>
+                <div className={`menu__item ${activeTabName.innerText === 'Nuestros servicios' ? 'active' : ''}`} onClick={ourServicesEventHandler}>Nuestros servicios</div>
+                <div className={`menu__item ${activeTabName.innerText === 'Planes' ? 'active' : ''}`} onClick={ourPlansEventHandler}>Planes</div>
+                <div className={`menu__item ${activeTabName.innerText === 'Acerca de nosotros' ? 'active' : ''}`} onClick={aboutUsEventHandler}>Acerca de nosotros</div>
+                <div className={`menu__item ${activeTabName.innerText === 'Grupos de usuarios' ? 'active' : ''}`} onClick={cvEventHandler}>Brochure</div>
             </div>
         </div>
     );
