@@ -34,6 +34,38 @@
 .menu__item:hover
   background-color: #213194
   color: white
+
 .active
   background-color: #213194
   color: white
+
+@media (max-width: 576px)
+  .menu
+    &__container
+      display: none
+      flex-direction: column
+      position: absolute
+      right: 0
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+      z-index: 100
+      width: 60%
+      height: 15px
+      background-color: #213194
+  .hamburger
+    display: flex
+    margin-right: 16px
+    cursor: pointer
+  .menu__opened
+    display: flex
+  .menu__item
+    background-color: #213194
+    color: white
+    border-radius: 0
+    &:hover
+      background-color: white
+      color: #213194
+      border: 1px solid #213194
+  .first
+    border-radius: 16px 16px 0 0
+  .last
+    border-radius: 0 0 16px 16px
